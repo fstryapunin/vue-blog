@@ -50,6 +50,12 @@ export default createStore({
       console.log(id)
       state.posts = [...state.posts].filter(post => id !== post.id)
       console.log(state.posts)
+    },
+    updatePost(state, newPost) {
+      state.posts = [...state.posts].map(statePost => {
+        if (statePost.id === newPost.id) return newPost
+        else return statePost
+      })
     }
   },  
   modules: {

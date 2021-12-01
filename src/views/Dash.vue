@@ -20,7 +20,7 @@ export default {
     computed: {
         userIsAtheticated(){
             return this.$store.getters.getUser.authenticated
-        }
+        },
     },
     methods:{
         authUser(){

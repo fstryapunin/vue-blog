@@ -32,4 +32,8 @@ export default {
     margin-right: auto;
     padding: 20px;
   }
+  p{
+      white-space: pre-line;
+      text-align: left;
+  }
 </style>
