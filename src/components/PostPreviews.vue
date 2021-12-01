@@ -1,7 +1,7 @@
 <template>
     <h1>RECENTS POSTS</h1> 
     <div>   
-        <div :key="post.id" v-for="post in $store.state.posts" class="post-preview-container">
+        <div :key="post.id" v-for="post in getPosts" class="post-preview-container">
             <PostPreview :post-data="post"/>
         </div>
     </div>     
@@ -13,7 +13,12 @@ import PostPreview from './PostPreview.vue'
 
 export default {
     name: 'PostPreviews',
-    components: {PostPreview},    
+    components: {PostPreview},
+    computed: {
+        getPosts(){
+            return this.$store.state.posts
+        }
+    },    
 }
 
 </script>

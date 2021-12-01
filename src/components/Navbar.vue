@@ -1,13 +1,24 @@
 <template>
     <div class="nav-container">
-        <img alt="navLogo" src="../assets/logo.png">
+        <img @click="logPosts" alt="navLogo" src="../assets/logo.png">
         <div class="link-container">
             <router-link to="/">HOME</router-link>
             <router-link to="/about" exact>ABOUT</router-link>
         </div>
-        <router-link to="/login">LOGIN</router-link>
+        <router-link to="/dashboard">ADMIN</router-link>        
     </div>
 </template>
+
+<script>
+export default {
+    name: 'Navbar',
+    methods:{
+        logPosts(){
+            console.log(this.$store.state.posts)
+        }
+    }    
+}
+</script>
 
 <style scoped>
     .nav-container{
@@ -15,6 +26,7 @@
         position: sticky;
         background-color: white;
         box-sizing: border-box;
+        flex-basis: 0px;
         width: 100%;
         padding: 20px;
         display: flex;

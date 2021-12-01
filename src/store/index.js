@@ -37,18 +37,30 @@ const initialPosts = [
 
 export default createStore({
   state: {
+    user: {
+      authenticated: true
+    },
     posts: initialPosts
   },
   mutations: {
-  },
-  actions: {   
-  },
+    updateUser(state, status) {
+      state.user.authenticated = status
+    },
+    deletePost(state, id) {
+      console.log(id)
+      state.posts = [...state.posts].filter(post => id !== post.id)
+      console.log(state.posts)
+    }
+  },  
   modules: {
   },
   getters: {
     getPost: (state) => (id) => {
       const post = state.posts.filter(post => post.id === id)
       return post[0]      
+    },
+    getUser(state) {
+      return state.user
     }
   }
 })

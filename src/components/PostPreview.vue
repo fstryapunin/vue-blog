@@ -28,8 +28,7 @@ export default {
         padding: 20px;      
         border-radius: 5px;       
         box-sizing: border-box;
-        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-        height: 100%;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);        
         transition: background-color 1s;
     }
     .post-preview-container:hover{
