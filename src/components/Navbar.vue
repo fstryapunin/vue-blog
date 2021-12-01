@@ -33,6 +33,7 @@ export default {
         align-items: center;
         justify-content: space-between;
         border-bottom: 5px solid #42b883;
+        z-index: 1;
     }
 
     .link-container{

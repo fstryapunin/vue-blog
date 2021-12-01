@@ -56,6 +56,11 @@ export default {
 </script>
 
 <style scoped>
+    .post-heading{        
+        text-align: left;
+      
+    }
+
     .post-edit-container{
         background-color: white;        
         margin: 20px 0px;
@@ -68,6 +73,7 @@ export default {
 
     .post-info{
         display: flex;
+        flex-wrap: wrap;
     }
 
     .post-editor{
@@ -90,6 +96,10 @@ export default {
 
     input{
         padding: 10px;
+    }
+
+    textarea{
+        resize: none;
     }
 
     .fade-enter-active,
