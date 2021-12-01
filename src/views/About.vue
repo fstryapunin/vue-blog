@@ -1,6 +1,6 @@
 <template>
   <div class="About">
-      <h2>MOCK BLOG</h2>
+      <h1>MOCK BLOG</h1>
       <p>This mock blog was made for interview purposes.</p>    
   </div>
 </template>

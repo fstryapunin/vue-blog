@@ -24,7 +24,12 @@ const routes = [
     path: '/error',
     name: 'Error',
     component: ErrorPage
-  }
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'CatchAll',
+    component: ErrorPage
+}
 ]
 
 const router = createRouter({
