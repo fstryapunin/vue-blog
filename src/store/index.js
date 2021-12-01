@@ -38,7 +38,7 @@ const initialPosts = [
 export default createStore({
   state: {
     user: {
-      authenticated: true
+      authenticated: false
     },
     posts: initialPosts
   },
@@ -46,10 +46,8 @@ export default createStore({
     updateUser(state, status) {
       state.user.authenticated = status
     },
-    deletePost(state, id) {
-      console.log(id)
-      state.posts = [...state.posts].filter(post => id !== post.id)
-      console.log(state.posts)
+    deletePost(state, id) {     
+      state.posts = [...state.posts].filter(post => id !== post.id)      
     },
     updatePost(state, newPost) {
       state.posts = [...state.posts].map(statePost => {

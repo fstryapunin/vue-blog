@@ -1,22 +1,19 @@
 <template>
     <div class="nav-container">
-        <img @click="logPosts" alt="navLogo" src="../assets/logo.png">
+        <div class="nav-inner">
+        <img alt="navLogo" src="../assets/logo.png">
         <div class="link-container">
             <router-link to="/">HOME</router-link>
             <router-link to="/about" exact>ABOUT</router-link>
         </div>
-        <router-link to="/dashboard">ADMIN</router-link>        
+        <router-link to="/dashboard">ADMIN</router-link>
+        </div>        
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Navbar',
-    methods:{
-        logPosts(){
-            console.log(this.$store.state.posts)
-        }
-    }    
+    name: 'Navbar'      
 }
 </script>
 
@@ -28,12 +25,19 @@ export default {
         box-sizing: border-box;
         flex-basis: 0px;
         width: 100%;
-        padding: 20px;
+        padding: 20px;        
+        border-bottom: 5px solid #42b883;
+        z-index: 1;
+    }
+
+    .nav-inner{
+        max-width: 1140px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 5px solid #42b883;
-        z-index: 1;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .link-container{

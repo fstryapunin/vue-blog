@@ -1,7 +1,7 @@
 <template>
     <div class="post-edit-container">
         <div class="post-info">      
-            <h2 class="post-heading">{{postData.title}}</h2>
+            <h2 class="post-heading">{{newPost.title}}</h2>
             <div class="btn-container">
                 <button @click="onEdit" class="post-btn edit-btn">EDIT</button>
                 <button @click="onDelete(postData.id)" class="post-btn delete-btn">DELETE</button>
@@ -48,8 +48,12 @@ export default {
             this.showEditor = !this.showEditor            
         },
         onSave(){
+            if(this.newPost.title.length > 0 && this.newPost.preview.length > 0 && this.newPost.content.length > 0){
             this.$store.commit('updatePost', this.newPost)
             this.showEditor = false
+            }else{
+                alert('Can not save post with an empty field!')
+            }
         }
     }      
 }
