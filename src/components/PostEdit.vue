@@ -11,7 +11,7 @@
             <div v-if="showEditor" class="post-editor">                
                 <div class="input-control">
                     <label>Title</label>
-                    <input class="text-input" type="text" v-model="newPost.title"/>
+                    <input class="text-input" type="text" maxlength="70" v-model="newPost.title"/>
                 </div>
                 <div class="input-control">
                     <label>Preview</label>

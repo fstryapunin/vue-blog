@@ -3,7 +3,7 @@
             <div class="post-editor">                
                 <div class="input-control">
                     <label>Title</label>
-                    <input class="text-input" type="text" v-model="post.title"/>
+                    <input class="text-input" type="text" maxlength="70" v-model="post.title"/>
                 </div>
                 <div class="input-control">
                     <label>Preview</label>
@@ -70,13 +70,15 @@ export default {
     }
     
     .new-post-wrapper{
-        position: absolute;
+        position: fixed;
+        overflow: auto;
         top: 95px;
         bottom:0;
         left: 0;
         right: 0;
         background-color: white;
-        padding: 25px;       
+        padding: 25px; 
+        overscroll-behavior: none;      
     }
     
     .post-editor{

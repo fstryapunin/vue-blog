@@ -1,13 +1,13 @@
 <template>
     <div class="dashboard">              
         <div v-if="userIsAtheticated">
-            <div v-if="!showCreatePost">         
+                  
             <div :key="post.id" v-for="post in $store.state.posts">
                 <PostEdit :post-data="post"/>                
             </div>
-            </div>   
-            <transition name="slide">
-                <NewPost @toggle-popup="toggleShowCreate" v-if="showCreatePost"/>
+             
+            <transition name="fade">
+                <NewPost @toggle-popup="toggleShowCreate" v-if="showCreatePost" />
             </transition>
             <button class="new-btn" @click="toggleShowCreate">NEW POST</button>
         </div>
@@ -41,7 +41,7 @@ export default {
         toggleShowCreate(){
             this.showCreatePost = !this.showCreatePost
         }
-    },
+    },   
     components: { Login, PostEdit, NewPost }
 }
 </script>
@@ -64,6 +64,16 @@ export default {
         color: white;
         width: 100%;
     }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
 
 
