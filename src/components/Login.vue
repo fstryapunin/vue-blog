@@ -14,7 +14,7 @@
         <label>Password</label>
         <input
             class="credential-input"
-            type="text"
+            type="password"
             v-model="password"             
             name="pass"
             placeholder="1234"
