@@ -57,7 +57,7 @@ export default createStore({
     },
     createPost(state, post) {      
       const newPost = { id: Math.floor(Math.random() * 1000), ...post }      
-      state.posts = [...state.posts, newPost]
+      state.posts = [newPost, ...state.posts]
     }
   },  
   modules: {
